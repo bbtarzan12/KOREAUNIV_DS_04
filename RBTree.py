@@ -182,6 +182,19 @@ class RedBlackTree:
                 height += 1
         return height
 
+    def total_node(self):
+        total = 0
+        for node in self.inorder_walk():
+            total += 1
+        return total
+
+    def black_node(self):
+        nb = 0
+        for node in self.inorder_walk():
+            if node.color is False:
+                nb += 1
+        return nb
+
     def __left_rotate(self, x):
         if not x.right:
             raise "x.right is nil!"
