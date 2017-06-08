@@ -2,14 +2,14 @@ class Node:
     RED = True
     BLACK = False
 
-    def __init__(self, key, color = RED):
+    def __init__(self, key, color=RED):
         if not type(color) == bool:
             raise TypeError("Bad value for color parameter, expected True/False but given %s" % color)
         self.color = color
         self.key = key
         self.left = self.right = self.parent = NilNode.instance()
 
-    def __str__(self, level = 0, indent = "   "):
+    def __str__(self, level=0, indent="   "):
         s = level * indent + str(self.key)
         if self.left:
             s = s + "\n" + self.left.__str__(level + 1, indent)
@@ -44,13 +44,14 @@ class NilNode(Node):
     def __bool__(self):
         return False
 
+
 class RedBlackTree:
     def __init__(self):
         self.root = NilNode.instance()
         self.size = 0
-        
+
     def __str__(self):
-        return ("(root.size = %d)\n" % self.size)    + str(self.root)
+        return ("(root.size = %d)\n" % self.size) + str(self.root)
 
     def add(self, key):
         self.insert(Node(key))
@@ -117,13 +118,13 @@ class RedBlackTree:
         self.size -= 1
         return y
 
-    def minimum(self, x = None):
+    def minimum(self, x=None):
         if x is None: x = self.root
         while x.left:
             x = x.left
         return x
 
-    def maximum(self, x = None):
+    def maximum(self, x=None):
         if x is None: x = self.root
         while x.right:
             x = x.right
@@ -147,21 +148,21 @@ class RedBlackTree:
             y = y.parent
         return y
 
-    def inorder_walk(self, x = None):
+    def inorder_walk(self, x=None):
         if x is None: x = self.root
         x = self.minimum()
         while x:
             yield x
             x = self.successor(x)
 
-    def reverse_inorder_walk(self, x = None):
+    def reverse_inorder_walk(self, x=None):
         if x is None: x = self.root
         x = self.maximum()
         while x:
             yield x.key
             x = self.predecessor(x)
 
-    def search(self, key, x = None):
+    def search(self, key, x=None):
         if x is None: x = self.root
         while x and x.key != key:
             if key < x.key:
@@ -173,7 +174,7 @@ class RedBlackTree:
     def is_empty(self):
         return bool(self.root)
 
-    def black_height(self, x = None):
+    def black_height(self, x=None):
         if x is None: x = self.root
         height = 0
         while x:
@@ -238,7 +239,7 @@ class RedBlackTree:
                 x = x.left
             else:
                 x = x.right
-        
+
         z.parent = y
         if not y:
             self.root = z
@@ -247,7 +248,7 @@ class RedBlackTree:
                 y.left = z
             else:
                 y.right = z
-        
+
         self.size += 1
 
     def __delete_fixup(self, x):
@@ -293,5 +294,5 @@ class RedBlackTree:
                     x.parent.color = Node.BLACK
                     w.left.color = Node.BLACK
                     self.__right_rotate(x.parent)
-                    x = root
+                    x = self.root
         x.color = Node.BLACK
