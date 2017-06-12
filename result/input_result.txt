@@ -1,0 +1,453 @@
+There is no 896
+
+There is no 756
+
+There is no 709
+
+There is no 284
+
+There is no 982
+
+There is no 965
+
+There is no 696
+
+There is no 756
+
+There is no 982
+
+There is no 830
+
+There is no 927
+
+There is no 678
+
+There is no 397
+
+There is no 717
+
+There is no 3
+
+There is no 709
+
+There is no 446
+
+There is no 397
+
+There is no 397
+
+There is no 910
+
+There is no 716
+
+There is no 496
+
+There is no 716
+
+There is no 234
+
+There is no 107
+
+There is no 479
+
+There is no 70
+
+There is no 622
+
+There is no 580
+
+There is no 39
+
+There is no 234
+
+There is no 678
+
+There is no 458
+
+There is no 678
+
+There is no 39
+
+There is no 659
+
+There is no 927
+
+There is no 501
+
+There is no 384
+
+There is no 327
+
+There is no 428
+
+There is no 891
+
+There is no 280
+
+There is no 327
+
+There is no 233
+
+There is no 692
+
+There is no 132
+
+There is no 618
+
+There is no 937
+
+There is no 286
+
+There is no 120
+
+There is no 894
+
+There is no 953
+
+There is no 227
+
+There is no 923
+
+There is no 580
+
+filename : input.txt
+total : 334
+insert : 576
+delete : 242
+miss : 56
+nb : 189
+bh : 5
+100 B
+101 R
+102 R
+102 R
+104 B
+105 B
+108 B
+111 R
+111 R
+12 B
+120 R
+129 R
+134 R
+136 B
+137 R
+142 B
+144 R
+149 B
+150 B
+153 R
+157 B
+17 R
+171 B
+172 B
+172 R
+173 R
+175 B
+183 R
+190 B
+193 B
+196 R
+199 B
+201 R
+207 B
+208 R
+211 B
+211 R
+213 R
+214 B
+225 B
+225 R
+234 B
+235 R
+235 R
+236 B
+239 R
+242 B
+246 B
+247 B
+248 B
+249 R
+251 B
+255 B
+255 R
+256 B
+256 R
+259 B
+268 B
+269 B
+269 R
+271 R
+273 B
+277 R
+281 B
+281 R
+282 B
+282 B
+287 B
+287 R
+289 B
+296 R
+298 B
+299 B
+300 R
+301 B
+302 R
+303 B
+314 R
+321 B
+321 R
+323 B
+324 R
+328 B
+332 R
+334 R
+341 B
+343 R
+344 R
+349 R
+350 B
+351 B
+351 B
+353 R
+355 B
+357 R
+358 B
+362 R
+362 B
+369 R
+37 B
+371 B
+380 R
+385 B
+385 B
+389 B
+39 R
+39 B
+390 R
+397 R
+397 B
+397 B
+397 B
+397 R
+397 R
+4 B
+401 R
+403 R
+404 B
+407 R
+407 R
+41 B
+411 B
+414 B
+424 R
+429 B
+436 B
+437 B
+443 B
+446 R
+447 B
+448 R
+46 R
+46 B
+46 B
+464 B
+465 R
+466 B
+47 B
+471 B
+471 R
+472 R
+478 B
+479 B
+48 B
+480 R
+480 R
+481 B
+492 R
+509 B
+51 R
+510 B
+512 B
+514 R
+514 B
+52 B
+528 B
+529 R
+536 R
+541 B
+542 B
+544 R
+544 B
+565 R
+566 B
+576 R
+581 B
+581 R
+581 B
+582 R
+586 B
+590 R
+591 B
+603 B
+607 B
+608 R
+609 R
+612 B
+613 R
+614 B
+619 R
+620 B
+621 R
+621 R
+622 B
+626 B
+626 R
+628 B
+63 B
+630 B
+631 R
+633 R
+64 B
+640 B
+642 B
+645 R
+645 R
+645 B
+648 R
+649 R
+649 B
+649 R
+653 B
+653 R
+658 B
+658 B
+666 B
+67 R
+67 B
+676 R
+678 B
+678 B
+678 R
+678 R
+682 B
+682 B
+682 R
+683 B
+690 R
+690 R
+691 B
+696 B
+696 B
+699 B
+7 B
+702 R
+704 B
+706 R
+707 B
+709 R
+711 B
+716 R
+716 B
+719 R
+72 R
+724 B
+728 R
+749 B
+749 B
+749 R
+754 B
+756 R
+756 B
+756 B
+758 B
+76 R
+760 B
+760 R
+761 B
+773 R
+777 B
+78 R
+78 B
+78 R
+785 B
+786 R
+787 R
+79 B
+793 R
+807 R
+809 B
+819 B
+819 B
+821 R
+822 R
+824 B
+825 R
+826 B
+828 B
+83 R
+830 B
+830 R
+830 R
+834 B
+837 B
+840 R
+846 B
+852 B
+854 B
+857 R
+865 R
+875 B
+876 R
+877 R
+879 B
+882 B
+886 B
+89 R
+896 R
+896 B
+896 B
+896 B
+896 B
+896 B
+896 B
+896 R
+905 B
+906 R
+908 R
+91 B
+910 R
+911 B
+923 R
+924 B
+924 B
+929 B
+930 B
+933 B
+94 B
+941 B
+942 B
+945 R
+946 B
+95 B
+960 R
+963 R
+965 B
+966 B
+973 R
+974 B
+977 R
+981 B
+982 R
+982 B
+982 B
+985 B
+985 R
+987 B
+99 B
+991 R
+993 B
+993 R
+995 B
+998 R
+998 B

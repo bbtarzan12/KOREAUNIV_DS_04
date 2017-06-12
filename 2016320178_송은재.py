@@ -1,5 +1,5 @@
 import RBTree
-import sys
+import os
 
 
 def create_tree():
@@ -7,7 +7,7 @@ def create_tree():
 
 
 def print_result(tree):
-    print("filename :", fileName, file=outputFile)
+    print("filename :", select, file=outputFile)
     print("total :", tree.total_node(), file=outputFile)
     print("insert :", insertNum, file=outputFile)
     print("delete :", deleteNum, file=outputFile)
@@ -15,16 +15,35 @@ def print_result(tree):
     print("nb :", tree.black_node(), file=outputFile)
     print("bh :", tree.black_height(), file=outputFile)
     for node in tree.inorder_walk():
-        print(str(node.key)[:-1], ('R' if node.color else 'B'), file=outputFile)
+        print(node.key, ('R' if node.color else 'B'), file=outputFile)
+
+def search_input_file():
+    filenames = os.listdir('./input')
+    return filenames
+
 
 
 if __name__ == "__main__":
-    if len(sys.argv) == 1:
-        print("Ex )", sys.argv[0], "input.txt")
+    fileNames = os.listdir('./input')
+    select = ''
+    if fileNames is None:
+        print("put your text files in input folder")
         exit()
-    fileName = sys.argv[1]
-    inputFile = open(fileName, 'r')
-    outputFile = open('result.txt', 'w')
+    else:
+        print('=====================')
+        for filename in fileNames:
+            print(filename)
+        print('=====================')
+        select = input('select input file (ex, input.txt) : ')
+        isFind = False
+        for filename in fileNames:
+            if filename == select:
+                isFind = True
+        if isFind is False:
+            print('There is no',select)
+            exit()
+    inputFile = open('./input/'+select, 'r')
+    outputFile = open('./result/'+select[:-4]+'_result.txt', 'w')
 
     insertNum = 0
     deleteNum = 0
@@ -33,18 +52,20 @@ if __name__ == "__main__":
     rbt = create_tree()
     lines = inputFile.readlines()
     for line in lines:
-        if line[0] is '0':
+        value = int(line)
+        if value == 0:
             print_result(rbt)
             inputFile.close()
             outputFile.close()
+            print(outputFile.name)
             exit()
-        if line[0] is not '-':
-            rbt.add(line)
+        if value > 0:
+            rbt.add(value)
             insertNum += 1
-        elif line[0] is '-':
+        elif value < 0:
             try:
-                rbt.delete(rbt.search(line[1:]))
+                rbt.delete(rbt.search(abs(value)))
                 deleteNum += 1
             except:
-                print("There is no", line[1:], file=outputFile)
+                print("There is no", value, file=outputFile)
                 missNum += 1
