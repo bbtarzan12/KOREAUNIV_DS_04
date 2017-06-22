@@ -21,11 +21,38 @@ def search_input_file():
     filenames = os.listdir('./input')
     return filenames
 
+def search_and_print():
+    isAdd = False
+    if searchFile is None:
+        print("put your search files in input folder ")
+        exit()
+    else:
+        searchlines = searchFile.readlines()
+        for sline in searchlines:
+            svalue = int(sline)
+            if svalue == 0:
+                inputFile.close()
+                outputFile.close()
+                searchFile.close()
+                print(outputFile.name)
+                exit()
+            snode = rbt.search(svalue)
+            curr = snode.key
+            if snode.key is None:
+                rbt.add(svalue)
+                snode = rbt.search(svalue)
+                isAdd = True
+            print(rbt.predecessor(snode).key,curr,rbt.successor(snode).key, file = outputFile)
+            if isAdd:
+                rbt.delete(snode)
+                isAdd = False
+
 
 
 if __name__ == "__main__":
     fileNames = os.listdir('./input')
     select = ''
+    isSearch = False
     if fileNames is None:
         print("put your text files in input folder")
         exit()
@@ -42,6 +69,10 @@ if __name__ == "__main__":
         if isFind is False:
             print('There is no',select)
             exit()
+    search = input('Do you want to use search?(y/n) : ')
+    if search == 'y':
+        isSearch = True
+        searchFile = open('./search/search01.txt', 'r')
     inputFile = open('./input/'+select, 'r')
     outputFile = open('./result/'+select[:-4]+'_result.txt', 'w')
 
@@ -54,7 +85,10 @@ if __name__ == "__main__":
     for line in lines:
         value = int(line)
         if value == 0:
-            print_result(rbt)
+            if isSearch:
+                search_and_print()
+            else:
+                print_result(rbt)
             inputFile.close()
             outputFile.close()
             print(outputFile.name)

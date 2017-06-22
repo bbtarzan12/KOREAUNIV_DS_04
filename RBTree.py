@@ -166,8 +166,10 @@ class RedBlackTree:
         if x is None: x = self.root
         while x and x.key != key:
             if key < x.key:
+                prev = x
                 x = x.left
             else:
+                prev = x
                 x = x.right
         return x
 
